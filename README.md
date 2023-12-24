@@ -92,3 +92,7 @@ pip install -r requirements.txt
 ```
 
 feel free to modify the content of main.py to suit your needs
+
+
+after running the main.py file repeatedly, we have the following result from the postgres server 
+![Logo](images/DE1.png)
