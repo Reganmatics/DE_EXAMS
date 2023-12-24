@@ -1,9 +1,0 @@
-ExpenseDb class
-expenses = [{}, {}, {}]
-
-1. add_expense
-for item in self.expenses:
-
-	INSERT INTO budget (id, title, amount, created_at, updated_at)
-	VALUES ({},{},{},{},{})
-
