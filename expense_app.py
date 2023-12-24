@@ -14,7 +14,7 @@ class Expense:
     def __init__(self, title, amount):
         """class init function
         """
-        self.id = str(uuid.uuid4())
+        self.id = uuid.uuid4()
         self.title = title
         self.amount = amount
         self.created_at = datetime.now(timezone.utc).isoformat() #.strftime('%Y-%m-%d %H:%M:%S.%f%z')
@@ -71,18 +71,6 @@ class ExpenseDatabase:
             );
                 """)
         self.conn.commit()
-
-    def test(self):
-        result = self.cur.execute("""
-            SELECT column_name
-            FROM information_schema.columns
-            WHERE table_schema = 'public'
-            AND table_name='budget';
-            """)
-
-        # Make the changes to the database persistent
-        # self.conn.commit()
-        return [item for item in result]
 
     def add_expense(self, expense):
         """Adds an expense.
