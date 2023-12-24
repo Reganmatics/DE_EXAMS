@@ -25,26 +25,22 @@ def main_expense():
 
 
 def main_DB():
+    db1 = ExpenseDatabase()
     exp1 = Expense('data', 100000)
+    db1.expenses.append(exp1)
     exp2 = Expense('tuition', 120000.50)
-    db1 = ExpenseDatabase([exp1, exp2])
-    #db1.add_expense(exp1)
+    db1.expenses.append(exp2)
+    db1.expenses.append(exp1,)
+    db1.add_expense(exp1)
     #db1.add_expense(exp2)
-    # test for get expense by id
-    print("\nTest for get expense by id\n")
-    print(db1.get_expense_by_id(exp1.title))
-    #test for get expense by title
-    print("\nTest for get expense by title\n")
-    print(db1.get_expense_by_title(exp2.title))
-    # Test for remove_expense
-    print("\nTest for remove expense\n")
-    if db1.remove_expense(exp1.title):
-        print("Expense removed")
-    
-    print(db1.to_dict())   
+
+    # to_dict
+    print("\ntest to dict()\n")
+    print(db1.to_dict())
+    # to
 
 if __name__ == "__main__":
-    #print(f"{'='*13}TEST{'='*13}\n{'='*30}")
-    #print(main_expense())
+    print(f"{'='*13}TEST{'='*13}\n{'='*30}")
+    print(main_expense())
     print(f"{'='*30}\nmainDB Test\n{'='*30}")
     main_DB()

@@ -50,10 +50,10 @@ class ExpenseDatabase:
     """Manages a collection of Expense objects.
     """
 
-    def __init__(self, expenses):
+    def __init__(self):
         """Initializes the list.
         """
-        self.expenses = expenses
+        self.expenses = []
         # to recreate the analysis withput errors, make sure to edit the connection parameters below
         self.conn = psycopg.connect(dbname = "metaverse",
                         user = "cryptoverse_admin",
@@ -119,7 +119,7 @@ class ExpenseDatabase:
         return [item for item in result]
     
     def to_dict(self):
-        """Returns a dictionary representation of the database.
+        """Returns a list of dictionaries representing expenses.
         """
         return {
             "expenses": [expense.to_dict() for expense in self.expenses]
